@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeoChat AI - Offline & Online</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app" class="app">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar__header">
+        <h2>NeoChat</h2>
+        <button id="toggleSidebar" class="icon-btn" title="Ficha Menyu">☰</button>
+      </div>
+
+      <div class="sidebar__actions">
+        <button id="newChatBtn" class="btn primary">+ Chat Mpya</button>
+        <button id="clearChatsBtn" class="btn danger" title="Futa zote">Futa Zote</button>
+      </div>
+
+      <!-- Chat Search Box -->
+      <div style="padding: 0 12px 8px 12px;">
+        <input type="text" id="chatSearchInput" placeholder="Tafuta chat..." autocomplete="off">
+      </div>
+
+      <!-- Chat History List -->
+      <div class="chat-history-container">
+        <div class="card__title" style="padding: 4px 12px;">Chat History</div>
+        <div id="chatList" class="chat-list"></div>
+      </div>
+
+      <!-- AI Mode Toggle Card -->
+      <div class="card" style="margin: 12px;">
+        <div class="card__title">AI Mode</div>
+        <label class="switch">
+          <span>Online AI (Halisi)</span>
+          <input type="checkbox" id="onlineModeToggle" />
+        </label>
+        <div class="sub" id="modeStatus" style="margin-top: 6px;">Hali: Offline Mode</div>
+      </div>
+
+      <!-- Theme Customizer Settings -->
+      <div class="sidebar__settings" style="padding: 0 12px 12px 12px;">
+        <div class="card__title">Muonekano (Theme)</div>
+        <div class="presets">
+          <button class="preset" data-theme="midnight" style="background:#090b14"></button>
+          <button class="preset" data-theme="ocean" style="background:#04131f"></button>
+          <button class="preset" data-theme="sunset" style="background:#1d0f18"></button>
+          <button class="preset" data-theme="emerald" style="background:#081610"></button>
+          <button class="preset" data-theme="violet" style="background:#120d22"></button>
+          <button class="preset" data-theme="mono" style="background:#0b0c10"></button>
+        </div>
+
+        <div class="setting-row">
+          <span>App Background</span>
+          <input type="color" id="appBg" value="#090b14">
+        </div>
+        <div class="setting-row">
+          <span>Chat Background</span>
+          <input type="color" id="chatBg" value="#0f1527">
+        </div>
+        <div class="setting-row">
+          <span>Sidebar Background</span>
+          <input type="color" id="sidebarBg" value="#0b1020">
+        </div>
+        <div class="setting-row">
+          <span>User Bubble</span>
+          <input type="color" id="userBubble" value="#7c5cff">
+        </div>
+        <div class="setting-row">
+          <span>Bot Bubble</span>
+          <input type="color" id="botBubble" value="#18223d">
+        </div>
+        <div class="setting-row">
+          <span>Accent Color</span>
+          <input type="color" id="accentColor" value="#7c5cff">
+        </div>
+
+        <div class="setting-row">
+          <span>Glassmorphism</span>
+          <input type="checkbox" id="glassMode">
+        </div>
+        <div class="setting-row">
+          <span>Rounded Corners</span>
+          <input type="checkbox" id="roundedMode" checked>
+        </div>
+      </div>
+
+      <div class="sidebar__footer">
+        <button id="themeToggle" class="btn secondary">Badili Mwanga / Giza</button>
+      </div>
+    </aside>
+
+    <!-- Resizer bar -->
+    <div id="resizeBar" class="resize-bar"></div>
+
+    <!-- Main Chat Area -->
+    <main class="chat-container">
+      <header class="chat-header">
+        <div class="chat-header__left">
+          <button id="mobileMenuBtn" class="icon-btn">☰</button>
+          <h3 id="chatTitle">Chat Mpya</h3>
+        </div>
+        <div class="chat-header__right">
+          <span id="status" class="status">Ready</span>
+        </div>
+      </header>
+
+      <div id="messages" class="messages">
+        <!-- Ujumbe utaingizwa hapa -->
+      </div>
+
+      <div id="typing" class="typing-indicator">
+        <span></span><span></span><span></span>
+      </div>
+
+      <form id="chatForm" class="chat-form">
+        <button type="button" id="emojiBtn" class="icon-btn" title="Weka Emoji">😀</button>
+        <input type="text" id="messageInput" placeholder="Andika ujumbe wako hapa..." autocomplete="off">
+        <button type="submit" id="sendBtn" class="btn primary">Send</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
